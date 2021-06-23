@@ -1,0 +1,11 @@
+--> Validação viaCep
+
+--> Validação Cpf
+
+--> Envio de email cadastro
+
+--> Telas React
+
+--> Banco SQL Server
+
+--> Spring Security
