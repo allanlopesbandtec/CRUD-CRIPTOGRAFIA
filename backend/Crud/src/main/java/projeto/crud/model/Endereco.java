@@ -1,5 +1,7 @@
 package projeto.crud.model;
 
+import projeto.crud.model.dto.EnderecoViaCep;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -24,13 +26,22 @@ public class Endereco {
     @NotNull(message = "Estado não pode ser null")
     private String estado;
 
+    @NotNull(message = "Bairro não pode ser null")
+    private String bairro;
 
-    public Endereco(Integer idEndereco, @NotNull String nomeRua, @NotNull String cep, @NotNull String cidade, @NotNull String estado) {
-        this.idEndereco = idEndereco;
-        this.nomeRua = nomeRua;
-        this.cep = cep;
-        this.cidade = cidade;
-        this.estado = estado;
+    @NotNull(message = "Número não pode ser null")
+    private String numero;
+
+    private String complemento;
+
+    public Endereco(EnderecoViaCep enderecoViaCep, String numero, String complemento) {
+        this.nomeRua = enderecoViaCep.getLogradouro();
+        this.cep = enderecoViaCep.getCep();
+        this.cidade = enderecoViaCep.getLocalidade();
+        this.estado = enderecoViaCep.getUf();
+        this.bairro = enderecoViaCep.getBairro();
+        this.numero = numero;
+        this.complemento = complemento;
     }
 
     public Endereco() {
@@ -74,5 +85,29 @@ public class Endereco {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 }

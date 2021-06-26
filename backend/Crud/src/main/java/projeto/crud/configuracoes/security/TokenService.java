@@ -42,7 +42,6 @@ public class TokenService {
             Jwts.parser() //Vai descriptografar o token
                     .setSigningKey(secret) //Vai pegar a chave para efetuar a descriptografia
                     .parseClaimsJws(token); // Devolve um objeto (tipo Claims) ou uma exceção
-
             return true;
         }catch (Exception e){
             return false;

@@ -1,5 +1,7 @@
 /****** Script do comando SelectTopNRows de SSMS  ******/
 
+SELECT * from endereco
+SELECT * from cadastro
 SELECT * from usuario
 SELECT * from perfil
 SELECT * from usuario_perfis

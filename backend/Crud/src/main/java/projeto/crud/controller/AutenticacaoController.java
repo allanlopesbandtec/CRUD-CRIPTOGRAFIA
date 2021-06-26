@@ -28,19 +28,15 @@ public class AutenticacaoController {
 
     @PostMapping
     public ResponseEntity<?> autenticar(@RequestBody @Valid FormLogin formLogin){
-
         UsernamePasswordAuthenticationToken dadosLogin = formLogin.converter();
-
         try {
+
             Authentication authentication = authenticationManager.authenticate(dadosLogin);
-
             String token = tokenService.gerarToken(authentication);
-
             return ResponseEntity.ok(new TokenDto(token, "Bearer"));
 
         }catch (AbstractMethodError e){
-
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.notFound().build();
         }
 
     }

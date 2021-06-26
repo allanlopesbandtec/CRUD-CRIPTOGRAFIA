@@ -11,9 +11,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import projeto.crud.model.Cadastro;
+import projeto.crud.model.Endereco;
 import projeto.crud.model.dto.CadastroDto;
+import projeto.crud.model.dto.EnderecoViaCep;
 import projeto.crud.repository.CadastroRepository;
+import projeto.crud.repository.EnderecoRepository;
+import projeto.crud.repository.ViaCepRepository;
+
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/cadastros")
@@ -22,11 +28,42 @@ public class CadastroController {
     @Autowired
     CadastroRepository cadastroRepository;
 
-    @PostMapping
+    @Autowired
+    EnderecoRepository enderecoRepository;
+
+    @Autowired
+    ViaCepRepository viaCepRepository;
+
+    @PostMapping("/{cep}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<Cadastro> cadastrar(@RequestBody @Valid Cadastro cadastro) {
-        cadastroRepository.save(cadastro);
-        return ResponseEntity.created(null).build();
+    public ResponseEntity<Cadastro> cadastrar(@RequestBody @Valid Cadastro cadastro,
+                                              @RequestParam(required = false) String complemento,
+                                              @RequestParam(required = true) String numero,
+                                              @PathVariable String cep) {
+
+            EnderecoViaCep consultaViaCep = viaCepRepository.buscarCep(cep);
+            //Endereço do via CEP
+
+        if (consultaViaCep.getCep().equals(null)){
+            return ResponseEntity.notFound().build();
+        }else {
+
+            Endereco endereco = new Endereco(consultaViaCep, numero, complemento);
+
+            if (enderecoRepository.exists(Example.of(endereco))){
+
+                Optional<Endereco> enderecoBanco = enderecoRepository.findOne(Example.of(endereco));
+                cadastro.setEndereco(enderecoBanco.get());
+                cadastroRepository.save(cadastro);
+
+            }else{
+                enderecoRepository.save(endereco);
+                cadastro.setEndereco(endereco);
+                cadastroRepository.save(cadastro);
+            }
+
+            return ResponseEntity.created(null).build();
+        }
     }
 
     @GetMapping
