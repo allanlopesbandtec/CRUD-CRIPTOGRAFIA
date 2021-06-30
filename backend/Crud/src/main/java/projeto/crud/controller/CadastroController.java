@@ -110,7 +110,7 @@ public class CadastroController {
         return CadastroDto.converter(cadastros);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/remover/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<HttpStatus> atualizarStatusCadastro(@PathVariable Integer id){
 
@@ -125,5 +125,20 @@ public class CadastroController {
             return ResponseEntity.notFound().build();
         }
     }
+
+//    @PutMapping("/{id}")
+//    @PreAuthorize("hasAuthority('ADMIN')")
+//    public ResponseEntity<HttpStatus> atualizarCadastro(@PathVariable Integer id){
+//
+//        if (cadastroRepository.existsById(id)){
+//            Cadastro cadastro = cadastroRepository.getOne(id);
+//            cadastro.setCadastrado(false);
+//            cadastroRepository.save(cadastro);
+//            return ResponseEntity.ok().build();
+//
+//        }else {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 
 }

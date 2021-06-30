@@ -1,13 +1,18 @@
 {
   "properties": [
     {
+      "name": "crud.jwt.secret",
+      "type": "java.lang.String",
+      "description": "Description for crud.jwt.secret."
+    },
+    {
       "name": "crud.jwt.expiration",
       "type": "java.lang.String",
       "description": "Description for crud.jwt.expiration."
     },
     {
-      "name": "crud.jwt.secret",
+      "name": "crud.swagger.path",
       "type": "java.lang.String",
-      "description": "Description for crud.jwt.secret."
+      "description": "Description for crud.swagger.path."
     }
   ] }
