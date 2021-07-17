@@ -23,4 +23,7 @@ public class UsuarioController {
         usuarioRepository.save(usuario);
         return ResponseEntity.created(null).build();
     }
+
+
+
 }
