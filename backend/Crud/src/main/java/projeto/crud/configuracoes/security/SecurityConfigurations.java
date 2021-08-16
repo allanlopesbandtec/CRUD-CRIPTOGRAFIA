@@ -37,9 +37,11 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/cadastros").permitAll()
                 .antMatchers(HttpMethod.GET, "/cadastros/*").permitAll()
                 .antMatchers(HttpMethod.POST, "/autenticacoes").permitAll()
+                .antMatchers(HttpMethod.POST, "/usuarios").permitAll()
                 .antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
                 .anyRequest().authenticated().and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().cors()
                 .and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService,usuarioRepository), UsernamePasswordAuthenticationFilter.class);
                 //.and().formLogin();
     }

@@ -1,10 +1,13 @@
-/****** Script do comando SelectTopNRows de SSMS  ******/
+USE CRUD
+
 
 SELECT * from endereco
 SELECT * from cadastro
 SELECT * from usuario
 SELECT * from perfil
 SELECT * from usuario_perfis
+
+
 
 insert into Usuario (nome,email,senha) values
 ('Amanda Biagi', 'amanda.biagi@gmail.com', '$2a$10$wX9az56HFQCbro1sR8XZJ.i.rkhnCYQCWLPWQVVe3Vj3AlfiWCn4e'),
