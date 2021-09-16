@@ -3,7 +3,7 @@ Projeto de CRUD com criptografia SHA-256
 
 ## Sistema de cadastros 
 
-- Controle de acesso, roles & permissions
+- Controle de acess (roles & permissions)
 
 - Criptografia BCrypt
 
@@ -11,4 +11,4 @@ Projeto de CRUD com criptografia SHA-256
 
 - Consumo de API ViaCep para cadastro de endereços
 
-- Autenticação via Token JWT
+- Autenticação via token JWT
