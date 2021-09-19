@@ -5,7 +5,7 @@ D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\configuraco
 D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\repository\UsuarioRepository.java
 D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\configuracoes\security\AutenticacaoUsuario.java
 D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\controller\AutenticacaoController.java
-D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\configuracoes\swagger\SwaggerConfiguration.java
+D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\model\Acesso.java
 D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\model\dto\EnderecoViaCep.java
 D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\model\Cadastro.java
 D:\Desktop\CRUD-CRIPTOGRAFIA\backend\Crud\src\main\java\projeto\crud\model\Perfil.java

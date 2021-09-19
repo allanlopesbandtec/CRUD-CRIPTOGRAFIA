@@ -18,7 +18,6 @@ projeto\crud\controller\UsuarioController.class
 projeto\crud\model\Cadastro.class
 projeto\crud\model\dto\EnderecoViaCep.class
 projeto\crud\repository\CadastroRepository.class
-projeto\crud\configuracoes\swagger\SwaggerConfiguration.class
 projeto\crud\configuracoes\security\DataConfiguration.class
 projeto\crud\model\dto\TokenDto.class
 projeto\crud\CrudApplication.class
