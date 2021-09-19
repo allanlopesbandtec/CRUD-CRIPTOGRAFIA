@@ -1,6 +1,7 @@
 package projeto.crud.model;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -16,12 +17,13 @@ public class Cadastro {
 
     @NotNull(message = "Nome não pode ser null")
     @NotBlank(message = "Nome não pode ficar em branco")
-    @Size(min = 3)
+    @Size(min = 3, max = 65)
     private String nomeCompleto;
 
     @Email
     @NotNull(message = "Email não pode ser null")
     @NotBlank(message = "Email não pode ficar em branco")
+    @Size(min = 10, max = 80)
     private String email;
 
 
@@ -38,13 +40,16 @@ public class Cadastro {
     private LocalDate dataNascimento;
 
     @Pattern(regexp = "(\\(?\\(\\d{2}\\)?\\))?(\\d{5}\\-\\d{4})", message = "Celular inválido")
+    @Size(min = 3, max = 13)
     private String celular;
 
     @Pattern(regexp = "(\\(?\\(\\d{2}\\)?\\))?(\\d{4}\\-\\d{4})", message = "Telefone inválido")
+    @Size(min = 3, max = 11)
     private String telefone;
 
     @NotNull(message = "Estado Civil não pode ser null")
     @NotBlank(message = "Estado Civil não pode ficar em branco")
+    @Size(min = 3, max = 20)
     private String estadoCivil;
 
     @CreationTimestamp

@@ -65,18 +65,18 @@
 
 
 		<!-- Permite monitoração do projeto -->
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-client</artifactId>
-			<version>2.3.1</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>de.codecentric</groupId>-->
+<!--			<artifactId>spring-boot-admin-starter-client</artifactId>-->
+<!--			<version>2.3.1</version>-->
+<!--		</dependency>-->
 
 
-		<!-- Libera informações do projeto para monitoração -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+<!--		&lt;!&ndash; Libera informações do projeto para monitoração &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-actuator</artifactId>-->
+<!--		</dependency>-->
 
 		<!-- Consultar outros microserviços -->
 

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Perfil implements GrantedAuthority {
@@ -14,6 +15,7 @@ public class Perfil implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Size(min = 3, max = 25)
     private String tipoPerfil;
 
     public Perfil(Integer id, String tipoPerfil) {
