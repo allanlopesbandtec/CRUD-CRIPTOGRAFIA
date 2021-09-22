@@ -11,4 +11,4 @@ Projeto de CRUD com criptografia SHA-256
 
 - Consumo de API ViaCep para cadastro de endereços
 
-- Autenticação via token JWT
+- <span style="color: #0086FF"> Autenticação via token JWT </span>
